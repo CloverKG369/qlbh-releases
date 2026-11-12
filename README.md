@@ -15,9 +15,9 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.5** | [QLBH-Setup-1.1.5.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.5/QLBH-Setup-1.1.5.exe) (~119 MB) |
+| Windows 10/11 | **desktop v1.1.6** | [QLBH-Setup-1.1.6.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.6/QLBH-Setup-1.1.6.exe) (~119 MB) |
 | Linux | **desktop v1.0.1** | [QLBH-Setup-1.0.1.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.0.1/QLBH-Setup-1.0.1.AppImage) (~126 MB) |
-| Android 7.0+ | **mobile v0.3.8** | [QLBH-Mobile-v0.3.8.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.8/QLBH-Mobile-v0.3.8.apk) (~12.9 MB, đã ký) |
+| Android 7.0+ | **mobile v0.3.9** | [QLBH-Mobile-v0.3.9.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.9/QLBH-Mobile-v0.3.9.apk) (~12.8 MB, đã ký) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -57,6 +57,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `v1.1.6` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `desktop-latest`), bản quyền qua workers.dev |
 | `v1.1.5` | 2026-11-12 | Cài đặt gộp thành 4 nhóm (Cửa hàng / Vận hành / Dữ liệu / Hệ thống) |
 | `v1.1.4` | 2026-11-12 | Điện thoại đồng bộ được qua LAN (CORS cho /api/sync); thêm công cụ kiểm tra endpoint và bố cục |
 | `v1.1.3` | 2026-11-12 | Máy tính trở thành máy chủ đồng bộ cho app điện thoại |
@@ -70,6 +71,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `mobile-v0.3.9` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `android-latest`), bản quyền qua workers.dev |
 | `mobile-v0.3.8` | 2026-11-12 | APK ký bằng khoá phát hành (tự ký, miễn phí), tải được trên điện thoại |
 | `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
 | `mobile-v0.3.4` | 2026-11-12 | Sửa "Failed to fetch" (native HTTP), toàn bộ bảng lớn thành card, 20/20 màn không tràn ngang |
@@ -89,6 +91,19 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
   đụng tag khi app điện thoại lên 1.x).
 - Không sửa file cài đã phát hành; muốn sửa thì phát hành bản mới.
 - Nhãn **Latest** dành cho bản desktop mới nhất (khách lần đầu thường cài máy tính trước).
+
+### Tag cố định cho cập nhật tự động
+
+Hai tag này **không phải bản phát hành thường** — chúng luôn chứa file mới nhất, để app có URL không
+đổi:
+
+| Tag | Dùng cho | File |
+| --- | --- | --- |
+| `android-latest` | cập nhật APK | `QLBH-Mobile.apk`, `latest-android.json` |
+| `desktop-latest` | cập nhật desktop | `latest.yml`, `QLBH-Setup-X.Y.Z.exe`, `.blockmap`, `.AppImage` |
+
+Refresh chúng bằng script trong repo nguồn (`pnpm publish:android:github`,
+`pnpm publish:desktop:github`). Đừng xoá hai tag này.
 
 ### Cập nhật kho sau khi phát hành
 
