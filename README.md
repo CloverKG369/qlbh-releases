@@ -17,7 +17,7 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 | --- | --- | --- |
 | Windows 10/11 | **desktop v1.1.3** | [QLBH-Setup-1.1.3.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.3/QLBH-Setup-1.1.3.exe) (~119 MB) |
 | Linux | **desktop v1.0.1** | [QLBH-Setup-1.0.1.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.0.1/QLBH-Setup-1.0.1.AppImage) (~126 MB) |
-| Android 7.0+ | **mobile v0.3.2** | [QLBH-Mobile-v0.3.2.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.2/QLBH-Mobile-v0.3.2.apk) (~13.5 MB) |
+| Android 7.0+ | **mobile v0.3.3** | [QLBH-Mobile-v0.3.3.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.3/QLBH-Mobile-v0.3.3.apk) (~13.5 MB) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -74,6 +74,7 @@ có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `mobile-v0.3.3` | 2026-11-12 | Hạ tầng: APK tự động sang kho chung sau khi CI build |
 | `mobile-v0.3.2` | 2026-11-12 | Hợp đồng API khớp desktop; thêm `check:parity` |
 | `mobile-v0.3.1` | 2026-11-12 | Sửa hướng đồng bộ và con trỏ pull/push |
 | `mobile-v0.3.0` | 2026-11-12 | In hoá đơn từ POS, đồng bộ LAN, bản quyền, tự cập nhật APK, giao diện card |
