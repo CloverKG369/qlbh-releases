@@ -15,9 +15,9 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.4** | [QLBH-Setup-1.1.4.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.4/QLBH-Setup-1.1.4.exe) (~119 MB) |
+| Windows 10/11 | **desktop v1.1.5** | [QLBH-Setup-1.1.5.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.5/QLBH-Setup-1.1.5.exe) (~119 MB) |
 | Linux | **desktop v1.0.1** | [QLBH-Setup-1.0.1.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.0.1/QLBH-Setup-1.0.1.AppImage) (~126 MB) |
-| Android 7.0+ | **mobile v0.3.4** | [QLBH-Mobile-v0.3.4.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.4/QLBH-Mobile-v0.3.4.apk) (~13.5 MB) |
+| Android 7.0+ | **mobile v0.3.5** | [QLBH-Mobile-v0.3.5.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.5/QLBH-Mobile-v0.3.5.apk) (~13.5 MB) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -63,6 +63,7 @@ có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `v1.1.5` | 2026-11-12 | Cài đặt gộp thành 4 nhóm (Cửa hàng / Vận hành / Dữ liệu / Hệ thống) |
 | `v1.1.4` | 2026-11-12 | Điện thoại đồng bộ được qua LAN (CORS cho /api/sync); thêm công cụ kiểm tra endpoint và bố cục |
 | `v1.1.3` | 2026-11-12 | Máy tính trở thành máy chủ đồng bộ cho app điện thoại |
 | `v1.1.2` | 2026-11-11 | Menu chính dạng thanh bên có menu con; tiêu đề cửa sổ theo tên cửa hàng |
@@ -75,6 +76,7 @@ có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
 | `mobile-v0.3.4` | 2026-11-12 | Sửa "Failed to fetch" (native HTTP), toàn bộ bảng lớn thành card, 20/20 màn không tràn ngang |
 | `mobile-v0.3.3` | 2026-11-12 | Hạ tầng: APK tự động sang kho chung sau khi CI build |
 | `mobile-v0.3.2` | 2026-11-12 | Hợp đồng API khớp desktop; thêm `check:parity` |
