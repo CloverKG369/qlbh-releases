@@ -17,7 +17,7 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 | --- | --- | --- |
 | Windows 10/11 | **desktop v1.1.5** | [QLBH-Setup-1.1.5.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.5/QLBH-Setup-1.1.5.exe) (~119 MB) |
 | Linux | **desktop v1.0.1** | [QLBH-Setup-1.0.1.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.0.1/QLBH-Setup-1.0.1.AppImage) (~126 MB) |
-| Android 7.0+ | **mobile v0.3.5** | [QLBH-Mobile-v0.3.5.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.5/QLBH-Mobile-v0.3.5.apk) (~13.5 MB) |
+| Android 7.0+ | **mobile v0.3.8** | [QLBH-Mobile-v0.3.8.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.8/QLBH-Mobile-v0.3.8.apk) (~12.9 MB, đã ký) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -32,7 +32,7 @@ Windows SmartScreen có thể cảnh báo vì bộ cài chưa ký số — chọ
 
 ### Cài trên điện thoại Android
 
-1. Tải file `.apk` bằng trình duyệt trên điện thoại.
+1. Tải file `.apk` bằng **Chrome** trên điện thoại. Nếu đang mở trong Zalo/Messenger: bấm **⋯ → Mở bằng trình duyệt** (các app này chặn tệp APK).
 2. Bật **Cài ứng dụng không rõ nguồn gốc** cho trình duyệt/file manager (Android sẽ hỏi).
 3. Mở file vừa tải → Cài.
 4. Lần đầu mở app đã có 4 sản phẩm mẫu để bán thử.
@@ -76,6 +76,7 @@ có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `mobile-v0.3.8` | 2026-11-12 | APK ký bằng khoá phát hành (tự ký, miễn phí), tải được trên điện thoại |
 | `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
 | `mobile-v0.3.4` | 2026-11-12 | Sửa "Failed to fetch" (native HTTP), toàn bộ bảng lớn thành card, 20/20 màn không tràn ngang |
 | `mobile-v0.3.3` | 2026-11-12 | Hạ tầng: APK tự động sang kho chung sau khi CI build |
