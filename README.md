@@ -83,7 +83,8 @@ có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
 ## 4. Quy tắc của kho này
 
 - **Mọi bản phát hành của cả desktop và mobile đều phải có mặt ở đây.** Bản mới phát hành ở repo
-  nguồn thì chạy `node scripts/mirror-releases.mjs` trong repo này để sao sang.
+  nguồn thì **CI của repo đó tự chạy** `scripts/mirror-releases.mjs` (secret `RELEASES_TOKEN`);
+  nếu CI lỗi thì chạy tay lệnh dưới.
 - Tag giữ nguyên gốc: desktop `vX.Y.Z`, mobile `mobile-vX.Y.Z` (dấu `mobile-` để hai sản phẩm không
   đụng tag khi app điện thoại lên 1.x).
 - Không sửa file cài đã phát hành; muốn sửa thì phát hành bản mới.
