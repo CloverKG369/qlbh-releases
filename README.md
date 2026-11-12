@@ -46,16 +46,10 @@ chmod +x QLBH-Setup-1.0.1.AppImage
 ./QLBH-Setup-1.0.1.AppImage
 ```
 
-## 2. Feed cập nhật (dùng bởi chính app)
+## 2. Cập nhật tự động
 
-| Sản phẩm | Feed | Dùng cho |
-| --- | --- | --- |
-| desktop | https://updates.tncheck.us/qlbh/latest.yml | Windows tự cập nhật |
-| desktop | https://updates.tncheck.us/qlbh/latest-linux.yml | Linux tự cập nhật |
-| mobile | https://updates.tncheck.us/qlbh/android/latest-android.json | APK báo bản mới |
-
-Feed gốc phục vụ trên Cloudflare R2 (`updates.tncheck.us`); repo này là **bản sao lưu phát hành**
-có cùng file cài và feed, dùng khi cần tải tay hoặc đối chiếu.
+App tự kiểm tra bản mới (máy tính khi mở app + mỗi 4 giờ; điện thoại trong Cài đặt → Hệ thống).
+Link feed không công bố ở đây; file cài và APK tải tay ngay trong mục Releases.
 
 ## 3. Lịch sử phát hành
 
