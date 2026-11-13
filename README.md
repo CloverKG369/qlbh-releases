@@ -57,6 +57,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `v1.1.10` | 2026-11-13 | Khôi phục màn hình bán hàng trên điện thoại; CI/release tự làm mới feed cố định; dọn dead code |
 | `v1.1.6` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `desktop-latest`), bản quyền qua workers.dev |
 | `v1.1.5` | 2026-11-12 | Cài đặt gộp thành 4 nhóm (Cửa hàng / Vận hành / Dữ liệu / Hệ thống) |
 | `v1.1.4` | 2026-11-12 | Điện thoại đồng bộ được qua LAN (CORS cho /api/sync); thêm công cụ kiểm tra endpoint và bố cục |
@@ -71,6 +72,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `mobile-v0.3.11` | 2026-11-13 | Sửa màn hình bán hàng bị cắt sau refactor (có lại giỏ hàng, mã vạch, bán chịu, VietQR, in) |
 | `mobile-v0.3.9` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `android-latest`), bản quyền qua workers.dev |
 | `mobile-v0.3.8` | 2026-11-12 | APK ký bằng khoá phát hành (tự ký, miễn phí), tải được trên điện thoại |
 | `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
@@ -102,8 +104,9 @@ Hai tag này **không phải bản phát hành thường** — chúng luôn ch�
 | `android-latest` | cập nhật APK | `QLBH-Mobile.apk`, `latest-android.json` |
 | `desktop-latest` | cập nhật desktop | `latest.yml`, `QLBH-Setup-X.Y.Z.exe`, `.blockmap`, `.AppImage` |
 
-Refresh chúng bằng script trong repo nguồn (`pnpm publish:android:github`,
-`pnpm publish:desktop:github`). Đừng xoá hai tag này.
+Refresh tự động: workflow `release-desktop` / `release-android` của repo `CloverKG369/qlbh` chạy
+`publish-desktop-github.mjs` / `publish-android-github.mjs` sau mỗi lần phát hành. Đừng xoá hai
+tag này — app đang cài giữ URL đó vĩnh viễn.
 
 ### Cập nhật kho sau khi phát hành
 
@@ -115,7 +118,9 @@ node scripts/mirror-releases.mjs --product mobile
 node scripts/mirror-releases.mjs --dry-run     # xem sẽ làm gì
 ```
 
-Cần `gh` CLI đã đăng nhập (`gh auth login`) và quyền với cả ba repo.
+Cần `gh` CLI đã đăng nhập (`gh auth login`) và quyền với cả ba repo. Cả hai sản phẩm phát hành
+từ **một** monorepo (`CloverKG369/qlbh`) với hai quy ước tag: desktop `vX.Y.Z`, mobile
+`mobile-vX.Y.Z`; script lọc theo tiền tố nên `--product` luôn chọn đúng bên.
 
 ## 5. Giấy phép và bản quyền
 
