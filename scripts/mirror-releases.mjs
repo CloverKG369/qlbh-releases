@@ -10,9 +10,10 @@
 //   node scripts/mirror-releases.mjs --only v1.1.3
 //   node scripts/mirror-releases.mjs --dry-run
 //
-// Tag naming in the mirror:
-//   desktop -> v1.1.3        (unchanged: electron-updater's GitHub provider needs the version tag)
-//   mobile  -> mobile-v0.3.2 (keeps the two products apart when the phone app reaches 1.x)
+// Both products are released from ONE monorepo (CloverKG369/qlbh) since the migration:
+//   desktop -> tag `vX.Y.Z`        (electron-updater's GitHub provider needs the version tag)
+//   mobile  -> tag `mobile-vX.Y.Z` (keeps the two products apart when the phone app reaches 1.x)
+// The mirror keeps those tag names as-is, so `--only` arguments and in-app feeds line up.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -20,8 +21,8 @@ import path from 'node:path';
 
 const TARGET = process.env.QLBH_RELEASES_REPO || 'CloverKG369/qlbh-releases';
 const PRODUCTS = {
-  desktop: { repo: 'CloverKG369/qlbh', prefix: '', label: 'QLBH desktop' },
-  mobile: { repo: 'CloverKG369/qlbh-mobile', prefix: 'mobile-', label: 'QLBH Mobile' },
+  desktop: { repo: 'CloverKG369/qlbh', label: 'QLBH desktop', matches: (tag) => /^v\d+\.\d+\.\d+$/.test(tag) },
+  mobile: { repo: 'CloverKG369/qlbh', label: 'QLBH Mobile', matches: (tag) => tag.startsWith('mobile-v') },
 };
 
 const args = process.argv.slice(2);
@@ -74,12 +75,14 @@ for (const product of products) {
     console.error(`Sản phẩm không hợp lệ: ${product}`);
     process.exit(1);
   }
-  const releases = listReleases(config.repo).reverse(); // oldest first, so tags appear in order
+  const releases = listReleases(config.repo)
+    .filter((r) => config.matches(r.tagName))
+    .reverse(); // oldest first, so tags appear in order
   console.log(`\n== ${config.label}: ${releases.length} bản trong ${config.repo}`);
 
   for (const release of releases) {
     if (onlyTag && release.tagName !== onlyTag) continue;
-    const targetTag = `${config.prefix}${release.tagName}`;
+    const targetTag = release.tagName;
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), `mirror-${product}-`));
 
     if (mirroredTags().has(targetTag) && !onlyTag) {
@@ -128,7 +131,7 @@ for (const product of products) {
 if (!dryRun) {
   // One "Latest" marker per repo: point it at the newest desktop release, which is what a
   // first-time visitor should install.
-  const newestDesktop = listReleases(PRODUCTS.desktop.repo)[0];
+  const newestDesktop = listReleases(PRODUCTS.desktop.repo).find((r) => PRODUCTS.desktop.matches(r.tagName));
   if (newestDesktop) {
     try {
       gh(['release', 'edit', newestDesktop.tagName, '--repo', TARGET, '--latest'], { inherit: true });
