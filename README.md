@@ -15,8 +15,8 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.12** | [QLBH-Setup-1.1.12.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.12/QLBH-Setup-1.1.12.exe) |
-| Linux | **desktop v1.1.12** | [QLBH-Setup-1.1.12.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.12/QLBH-Setup-1.1.12.AppImage) |
+| Windows 10/11 | **desktop v1.1.13** | [QLBH-Setup-1.1.13.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.13/QLBH-Setup-1.1.13.exe) |
+| Linux | **desktop v1.1.13** | [QLBH-Setup-1.1.13.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.13/QLBH-Setup-1.1.13.AppImage) |
 | Android 7.0+ | **mobile v0.3.11** | [QLBH-Mobile-v0.3.11.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.11/QLBH-Mobile-v0.3.11.apk) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
@@ -42,8 +42,8 @@ Windows SmartScreen có thể cảnh báo vì bộ cài chưa ký số — chọ
 ### Cài trên Linux
 
 ```bash
-chmod +x QLBH-Setup-1.1.12.AppImage
-./QLBH-Setup-1.1.12.AppImage
+chmod +x QLBH-Setup-1.1.13.AppImage
+./QLBH-Setup-1.1.13.AppImage
 ```
 
 ## 2. Cập nhật tự động
@@ -57,7 +57,8 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `v1.1.12` | 2026-11-14 | Bản Linux (AppImage) có mặt trong release; sửa đơn từ điện thoại bị mất khi hai máy khác id; màn Báo cáo điện thoại không còn trống |
+| `v1.1.13` | 2026-11-14 | Bản Linux (AppImage) trong cả release và tag cập nhật; sửa đơn từ điện thoại bị mất khi hai máy khác id; màn Báo cáo điện thoại không còn trống |
+| `v1.1.12` | 2026-11-14 | Nền tảng cho phát hành gộp Windows+Linux (bản này thiếu AppImage trong tag cập nhật) |
 | `v1.1.11` | 2026-11-14 | *Không phát hành* — CI lỗi trước khi tạo bản; tag đã bỏ, số hiệu bỏ trống |
 | `v1.1.10` | 2026-11-13 | Khôi phục màn hình bán hàng trên điện thoại; CI/release tự làm mới feed cố định; dọn dead code |
 | `v1.1.6` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `desktop-latest`), bản quyền qua workers.dev |
