@@ -128,6 +128,58 @@ for (const product of products) {
   }
 }
 
+// A single front door. The "Latest" badge can only sit on one release, and the phone's APK is a
+// different release, so a visitor landing on Latest saw desktop files only and asked where the APK
+// (and sometimes Linux) went. Tag `latest` carries every current installer in one place; it is
+// refreshed on every release and never wears the Latest badge itself.
+function refreshFrontDoor() {
+  if (dryRun) return;
+  const work = fs.mkdtempSync(path.join(os.tmpdir(), 'front-door-'));
+  try {
+    const pick = (repo, matches) => listReleases(repo).find((r) => matches(r.tagName));
+    const desktop = pick(PRODUCTS.desktop.repo, PRODUCTS.desktop.matches);
+    const mobile = pick(PRODUCTS.mobile.repo, PRODUCTS.mobile.matches);
+    if (!desktop || !mobile) return;
+
+    for (const [repo, tag] of [[PRODUCTS.desktop.repo, desktop.tagName], [PRODUCTS.mobile.repo, mobile.tagName]]) {
+      gh(['release', 'download', tag, '--repo', repo, '--dir', work], { inherit: true });
+    }
+    // The directory holds both products' files; keep just the installers and their feeds.
+    for (const file of fs.readdirSync(work)) {
+      if (!/\.(exe|AppImage|blockmap|apk|yml|json)$/.test(file)) fs.rmSync(path.join(work, file), { force: true });
+    }
+
+    const notes = [
+      '# QLBH — tải bản mới nhất',
+      '',
+      '| Sản phẩm | File |',
+      '| --- | --- |',
+      `| Windows 10/11 | \`${desktop.tagName}\` — QLBH-Setup-*.exe |`,
+      `| Linux | \`${desktop.tagName}\` — QLBH-Setup-*.AppImage |`,
+      `| Android 7.0+ | \`${mobile.tagName}\` — QLBH-Mobile-*.apk |`,
+      '',
+      'Mỗi bản cũng có trang riêng theo tag tương ứng. Bản desktop tự cập nhật qua `desktop-latest`,',
+      'app Android tự cập nhật qua `android-latest`.',
+    ].join('\n');
+    const notesFile = path.join(work, 'README.md');
+    fs.writeFileSync(notesFile, notes);
+
+    const files = fs.readdirSync(work).map((f) => path.join(work, f));
+    try {
+      gh(['release', 'delete', 'latest', '--repo', TARGET, '--yes', '--cleanup-tag']);
+    } catch {
+      /* first time */
+    }
+    gh(['release', 'create', 'latest', ...files, '--repo', TARGET, '--latest=false',
+      '--title', 'Tải bản mới nhất (Windows · Linux · Android)', '--notes-file', notesFile], { inherit: true });
+    console.log('  → làm mới trang tải tổng: tag latest');
+  } catch (err) {
+    console.error('  ! không làm mới được trang tải tổng:', String(err.message || err).slice(0, 200));
+  } finally {
+    fs.rmSync(work, { recursive: true, force: true });
+  }
+}
+
 if (!dryRun) {
   // One "Latest" marker per repo: point it at the newest desktop release, which is what a
   // first-time visitor should install.
@@ -140,5 +192,7 @@ if (!dryRun) {
     }
   }
 }
+
+refreshFrontDoor();
 
 console.log(`\nXong: ${copied} bản được sao, ${skipped} bản đã có sẵn. Repo đích: ${TARGET}`);

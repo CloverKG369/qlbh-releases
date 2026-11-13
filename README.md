@@ -11,6 +11,16 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 ---
 
+## 0. Một trang tải cho tất cả
+
+Nhãn **Latest** của GitHub chỉ gắn được cho **một** bản, mà mỗi sản phẩm lại là một bản riêng —
+khách mở "Latest" chỉ thấy file desktop và hỏi APK/Linux ở đâu. Vì vậy có thêm tag
+**[`latest`](https://github.com/CloverKG369/qlbh-releases/releases/tag/latest)**: một trang chứa
+**cả ba** bộ cài của bản mới nhất (Windows `.exe`, Linux `.AppImage`, Android `.apk`), do CI làm mới
+sau mỗi lần phát hành.
+
+Link gửi khách: **https://github.com/CloverKG369/qlbh-releases/releases/tag/latest**
+
 ## 1. Tải bản mới nhất
 
 | Nền tảng | Bản mới nhất | File |
