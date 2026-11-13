@@ -15,9 +15,9 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.13** | [QLBH-Setup-1.1.13.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.13/QLBH-Setup-1.1.13.exe) |
-| Linux | **desktop v1.1.13** | [QLBH-Setup-1.1.13.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.13/QLBH-Setup-1.1.13.AppImage) |
-| Android 7.0+ | **mobile v0.3.11** | [QLBH-Mobile-v0.3.11.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.11/QLBH-Mobile-v0.3.11.apk) |
+| Windows 10/11 | **desktop v1.1.14** | [QLBH-Setup-1.1.14.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.14/QLBH-Setup-1.1.14.exe) |
+| Linux | **desktop v1.1.14** | [QLBH-Setup-1.1.14.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.14/QLBH-Setup-1.1.14.AppImage) |
+| Android 7.0+ | **mobile v0.3.12** | [QLBH-Mobile-v0.3.12.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.12/QLBH-Mobile-v0.3.12.apk) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -42,8 +42,8 @@ Windows SmartScreen có thể cảnh báo vì bộ cài chưa ký số — chọ
 ### Cài trên Linux
 
 ```bash
-chmod +x QLBH-Setup-1.1.13.AppImage
-./QLBH-Setup-1.1.13.AppImage
+chmod +x QLBH-Setup-1.1.14.AppImage
+./QLBH-Setup-1.1.14.AppImage
 ```
 
 ## 2. Cập nhật tự động
@@ -57,6 +57,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `v1.1.14` | 2026-11-14 | Sửa nhập số (không còn 025000), thêm khách nhanh trong POS, báo cáo lọc theo kỳ + khách hàng, xem hàng theo danh mục, thêm nhanh NCC/kho trong phiếu nhập, danh sách đơn + tạo lại đơn, huỷ đơn có PIN và hoàn tiền vào ca |
 | `v1.1.13` | 2026-11-14 | Bản Linux (AppImage) trong cả release và tag cập nhật; sửa đơn từ điện thoại bị mất khi hai máy khác id; màn Báo cáo điện thoại không còn trống |
 | `v1.1.12` | 2026-11-14 | Nền tảng cho phát hành gộp Windows+Linux (bản này thiếu AppImage trong tag cập nhật) |
 | `v1.1.11` | 2026-11-14 | *Không phát hành* — CI lỗi trước khi tạo bản; tag đã bỏ, số hiệu bỏ trống |
@@ -75,7 +76,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `mobile-v0.3.11` | 2026-11-13 | Sửa màn hình bán hàng bị cắt sau refactor (có lại giỏ hàng, mã vạch, bán chịu, VietQR, in) |
+| `mobile-v0.3.12` | 2026-11-13 | Sửa màn hình bán hàng bị cắt sau refactor (có lại giỏ hàng, mã vạch, bán chịu, VietQR, in) |
 | `mobile-v0.3.9` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `android-latest`), bản quyền qua workers.dev |
 | `mobile-v0.3.8` | 2026-11-12 | APK ký bằng khoá phát hành (tự ký, miễn phí), tải được trên điện thoại |
 | `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
