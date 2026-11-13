@@ -5,7 +5,7 @@ Tất cả bản cài của **hai** sản phẩm được phát hành tại đâ
 | Sản phẩm | Nền tảng | Mã nguồn |
 | --- | --- | --- |
 | **QLBH desktop** — bán hàng, kho, công nợ trên máy tính | Windows (NSIS), Linux (AppImage) | https://github.com/CloverKG369/qlbh |
-| **QLBH Mobile** — cùng nghiệp vụ trên điện thoại Android | Android (APK) | https://github.com/CloverKG369/qlbh-mobile |
+| **QLBH Mobile** — cùng nghiệp vụ trên điện thoại Android | Android (APK) | https://github.com/CloverKG369/qlbh (`apps/mobile`) |
 
 Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã nguồn.
 
@@ -15,9 +15,9 @@ Repo này **chỉ chứa file cài + feed cập nhật**. Không chứa mã ngu�
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.6** | [QLBH-Setup-1.1.6.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.6/QLBH-Setup-1.1.6.exe) (~119 MB) |
-| Linux | **desktop v1.0.1** | [QLBH-Setup-1.0.1.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.0.1/QLBH-Setup-1.0.1.AppImage) (~126 MB) |
-| Android 7.0+ | **mobile v0.3.9** | [QLBH-Mobile-v0.3.9.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.9/QLBH-Mobile-v0.3.9.apk) (~12.8 MB, đã ký) |
+| Windows 10/11 | **desktop v1.1.12** | [QLBH-Setup-1.1.12.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.12/QLBH-Setup-1.1.12.exe) |
+| Linux | **desktop v1.1.12** | [QLBH-Setup-1.1.12.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.12/QLBH-Setup-1.1.12.AppImage) |
+| Android 7.0+ | **mobile v0.3.11** | [QLBH-Mobile-v0.3.11.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.11/QLBH-Mobile-v0.3.11.apk) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -42,8 +42,8 @@ Windows SmartScreen có thể cảnh báo vì bộ cài chưa ký số — chọ
 ### Cài trên Linux
 
 ```bash
-chmod +x QLBH-Setup-1.0.1.AppImage
-./QLBH-Setup-1.0.1.AppImage
+chmod +x QLBH-Setup-1.1.12.AppImage
+./QLBH-Setup-1.1.12.AppImage
 ```
 
 ## 2. Cập nhật tự động
@@ -57,6 +57,8 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
+| `v1.1.12` | 2026-11-14 | Bản Linux (AppImage) có mặt trong release; sửa đơn từ điện thoại bị mất khi hai máy khác id; màn Báo cáo điện thoại không còn trống |
+| `v1.1.11` | 2026-11-14 | *Không phát hành* — CI lỗi trước khi tạo bản; tag đã bỏ, số hiệu bỏ trống |
 | `v1.1.10` | 2026-11-13 | Khôi phục màn hình bán hàng trên điện thoại; CI/release tự làm mới feed cố định; dọn dead code |
 | `v1.1.6` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `desktop-latest`), bản quyền qua workers.dev |
 | `v1.1.5` | 2026-11-12 | Cài đặt gộp thành 4 nhóm (Cửa hàng / Vận hành / Dữ liệu / Hệ thống) |
@@ -93,6 +95,9 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
   đụng tag khi app điện thoại lên 1.x).
 - Không sửa file cài đã phát hành; muốn sửa thì phát hành bản mới.
 - Nhãn **Latest** dành cho bản desktop mới nhất (khách lần đầu thường cài máy tính trước).
+- Mỗi bản desktop phải kèm **cả** `.exe` (Windows) và `.AppImage` (Linux); thiếu một nền tảng là
+  lỗi của CI, không phải "phát hành một nửa" — workflow `release-desktop` kiểm tra việc này trước
+  khi tạo release.
 
 ### Tag cố định cho cập nhật tự động
 
@@ -118,9 +123,14 @@ node scripts/mirror-releases.mjs --product mobile
 node scripts/mirror-releases.mjs --dry-run     # xem sẽ làm gì
 ```
 
-Cần `gh` CLI đã đăng nhập (`gh auth login`) và quyền với cả ba repo. Cả hai sản phẩm phát hành
-từ **một** monorepo (`CloverKG369/qlbh`) với hai quy ước tag: desktop `vX.Y.Z`, mobile
-`mobile-vX.Y.Z`; script lọc theo tiền tố nên `--product` luôn chọn đúng bên.
+Cần `gh` CLI đã đăng nhập (`gh auth login`) và quyền với **hai** repo: `qlbh` (nguồn) và
+`qlbh-releases` (đích). Cả hai sản phẩm phát hành từ **một** monorepo (`CloverKG369/qlbh`) với hai
+quy ước tag: desktop `vX.Y.Z`, mobile `mobile-vX.Y.Z`; script lọc theo tiền tố nên `--product` luôn
+chọn đúng bên.
+
+Repo `qlbh-mobile` cũ đã được lưu trữ và đang được xoá (14/11/2026). Lịch sử 118 commit của nó nằm ở nhánh
+`archive/mobile-pre-monorepo` trong `CloverKG369/qlbh`; mọi bản APK nó từng phát hành đều đã có ở
+đây.
 
 ## 5. Giấy phép và bản quyền
 
