@@ -25,9 +25,9 @@ Link gửi khách: **https://github.com/CloverKG369/qlbh-releases/releases/tag/l
 
 | Nền tảng | Bản mới nhất | File |
 | --- | --- | --- |
-| Windows 10/11 | **desktop v1.1.30** | [QLBH-Setup-1.1.30.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.30/QLBH-Setup-1.1.30.exe) |
-| Linux | **desktop v1.1.30** | [QLBH-Setup-1.1.30.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.30/QLBH-Setup-1.1.30.AppImage) |
-| Android 7.0+ | **mobile v0.3.28** | [QLBH-Mobile-v0.3.28.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.28/QLBH-Mobile-v0.3.28.apk) |
+| Windows 10/11 | **desktop v1.1.31** | [QLBH-Setup-1.1.31.exe](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.31/QLBH-Setup-1.1.31.exe) |
+| Linux | **desktop v1.1.31** | [QLBH-Setup-1.1.31.AppImage](https://github.com/CloverKG369/qlbh-releases/releases/download/v1.1.31/QLBH-Setup-1.1.31.AppImage) |
+| Android 7.0+ | **mobile v0.3.29** | [QLBH-Mobile-v0.3.29.apk](https://github.com/CloverKG369/qlbh-releases/releases/download/mobile-v0.3.29/QLBH-Mobile-v0.3.29.apk) |
 
 Tất cả bản cũ nằm ở mục **Releases** bên phải.
 
@@ -52,8 +52,8 @@ Windows SmartScreen có thể cảnh báo vì bộ cài chưa ký số — chọ
 ### Cài trên Linux
 
 ```bash
-chmod +x QLBH-Setup-1.1.30.AppImage
-./QLBH-Setup-1.1.30.AppImage
+chmod +x QLBH-Setup-1.1.31.AppImage
+./QLBH-Setup-1.1.31.AppImage
 ```
 
 ## 2. Cập nhật tự động
@@ -67,7 +67,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `v1.1.30` | 2026-11-17 | Tồn kho hiện ngay sản phẩm mới · sửa giá bán lẻ tại giỏ · bỏ hạn mức nợ, mọi khách ghi nợ được · bảng không cuộn ngang (tiêu đề ngắn + tooltip) · hành động là icon |
+| `v1.1.31` | 2026-11-17 | Tồn kho hiện ngay sản phẩm mới · sửa giá bán lẻ tại giỏ · bỏ hạn mức nợ, mọi khách ghi nợ được · bảng không cuộn ngang (tiêu đề ngắn + tooltip) · hành động là icon |
 | `v1.1.29` | 2026-11-16 | POS mobile tách 2 pane Sản phẩm / Giỏ hàng, chip không cắt, thanh tổng tiền dính đáy |
 | `v1.1.28` | 2026-11-16 | Viết lại Sổ công nợ: 2 lớp gọn, tìm nhanh, tự điền số thu, bỏ FIFO |
 | `v1.1.27` | 2026-11-16 | Sổ công nợ: sửa 5 lỗi logic (KPI, tiền két, tổng đã trả, đối tác đã xoá, tab trùng) |
@@ -82,7 +82,7 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `mobile-v0.3.28` | 2026-11-17 | Cùng 5 thay đổi với desktop 1.1.30 |
+| `mobile-v0.3.29` | 2026-11-17 | Cùng 5 thay đổi với desktop 1.1.31 |
 | `mobile-v0.3.27` | 2026-11-16 | POS mobile: 2 pane Sản phẩm / Giỏ hàng, chip không cắt, thanh thanh toán dính đáy |
 | `mobile-v0.3.26` | 2026-11-16 | Sổ công nợ viết lại gọn, tự động |
 | `mobile-v0.3.25` | 2026-11-16 | Sổ công nợ: sửa lỗi KPI/két/tổng, bỏ tab trùng |
