@@ -67,36 +67,30 @@ Link feed không công bố ở đây; file cài và APK tải tay ngay trong m�
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `v1.1.30` | 2026-11-14 | Sửa nhập số (không còn 025000), thêm khách nhanh trong POS, báo cáo lọc theo kỳ + khách hàng, xem hàng theo danh mục, thêm nhanh NCC/kho trong phiếu nhập, danh sách đơn + tạo lại đơn, huỷ đơn có PIN và hoàn tiền vào ca |
-| `v1.1.13` | 2026-11-14 | Bản Linux (AppImage) trong cả release và tag cập nhật; sửa đơn từ điện thoại bị mất khi hai máy khác id; màn Báo cáo điện thoại không còn trống |
-| `v1.1.12` | 2026-11-14 | Nền tảng cho phát hành gộp Windows+Linux (bản này thiếu AppImage trong tag cập nhật) |
-| `v1.1.11` | 2026-11-14 | *Không phát hành* — CI lỗi trước khi tạo bản; tag đã bỏ, số hiệu bỏ trống |
-| `v1.1.10` | 2026-11-13 | Khôi phục màn hình bán hàng trên điện thoại; CI/release tự làm mới feed cố định; dọn dead code |
-| `v1.1.6` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `desktop-latest`), bản quyền qua workers.dev |
-| `v1.1.5` | 2026-11-12 | Cài đặt gộp thành 4 nhóm (Cửa hàng / Vận hành / Dữ liệu / Hệ thống) |
-| `v1.1.4` | 2026-11-12 | Điện thoại đồng bộ được qua LAN (CORS cho /api/sync); thêm công cụ kiểm tra endpoint và bố cục |
-| `v1.1.3` | 2026-11-12 | Máy tính trở thành máy chủ đồng bộ cho app điện thoại |
-| `v1.1.2` | 2026-11-11 | Menu chính dạng thanh bên có menu con; tiêu đề cửa sổ theo tên cửa hàng |
-| `v1.1.1` | 2026-11-11 | Bỏ dòng "máy chủ cấp phép"; hiện đủ 8 menu kho |
-| `v1.1.0` | 2026-11-11 | Bản quyền (6 tháng/1 năm/vĩnh viễn), dùng thử 14 ngày, quản lý mã bằng trang web |
-| `v1.0.1` | 2026-11-11 | `.blockmap` cho cập nhật delta |
-| `v1.0.0` | 2026-11-11 | Bản phát hành đầu tiên |
+| `v1.1.30` | 2026-11-17 | Tồn kho hiện ngay sản phẩm mới · sửa giá bán lẻ tại giỏ · bỏ hạn mức nợ, mọi khách ghi nợ được · bảng không cuộn ngang (tiêu đề ngắn + tooltip) · hành động là icon |
+| `v1.1.29` | 2026-11-16 | POS mobile tách 2 pane Sản phẩm / Giỏ hàng, chip không cắt, thanh tổng tiền dính đáy |
+| `v1.1.28` | 2026-11-16 | Viết lại Sổ công nợ: 2 lớp gọn, tìm nhanh, tự điền số thu, bỏ FIFO |
+| `v1.1.27` | 2026-11-16 | Sổ công nợ: sửa 5 lỗi logic (KPI, tiền két, tổng đã trả, đối tác đã xoá, tab trùng) |
+| `v1.1.26` | 2026-11-16 | Sổ cái công nợ thành tab, checkbox chọn nhiều, xoá/huỷ hàng loạt |
+| `v1.1.25` | 2026-11-16 | Đồng bộ hai chiều toàn bộ chứng từ, huỷ phiếu thu, tự động đồng bộ |
+| `v1.1.24` | 2026-11-16 | Sổ công nợ: nhập nợ cũ, điều chỉnh, sửa/xoá bút toán nhập tay |
+| `v1.1.23` | 2026-11-16 | Sửa logic xoá (danh mục 0 sản phẩm, chặn xoá SP/kho còn tồn), bảng hết cuộn ngang, bill bỏ dòng tác giả |
+| `v1.1.22` | 2026-11-16 | Sửa lỗi không xoá được: hộp thoại trong app thay confirm native, client không bỏ qua lỗi máy chủ |
+| `v1.1.21` | 2026-11-15 | Nhập liệu ổn định (focus), thêm sản phẩm ngay trong phiếu nhập kho |
 
 ### Mobile (Android)
 
 | Tag | Ngày | Ghi chú chính |
 | --- | --- | --- |
-| `mobile-v0.3.28` | 2026-11-13 | Sửa màn hình bán hàng bị cắt sau refactor (có lại giỏ hàng, mã vạch, bán chịu, VietQR, in) |
-| `mobile-v0.3.9` | 2026-11-12 | Cập nhật qua GitHub (tag cố định `android-latest`), bản quyền qua workers.dev |
-| `mobile-v0.3.8` | 2026-11-12 | APK ký bằng khoá phát hành (tự ký, miễn phí), tải được trên điện thoại |
-| `mobile-v0.3.5` | 2026-11-12 | Bàn phím hoạt động, vùng an toàn Android 15, Cài đặt gộp 4 nhóm — kiểm trên máy ảo Android 15 |
-| `mobile-v0.3.4` | 2026-11-12 | Sửa "Failed to fetch" (native HTTP), toàn bộ bảng lớn thành card, 20/20 màn không tràn ngang |
-| `mobile-v0.3.3` | 2026-11-12 | Hạ tầng: APK tự động sang kho chung sau khi CI build |
-| `mobile-v0.3.2` | 2026-11-12 | Hợp đồng API khớp desktop; thêm `check:parity` |
-| `mobile-v0.3.1` | 2026-11-12 | Sửa hướng đồng bộ và con trỏ pull/push |
-| `mobile-v0.3.0` | 2026-11-12 | In hoá đơn từ POS, đồng bộ LAN, bản quyền, tự cập nhật APK, giao diện card |
-| `mobile-v0.2.0` | 2026-11-12 | Dữ liệu SQLite trên máy, giao diện điện thoại, đồng bộ hai chiều |
-| `mobile-v0.1.0` | 2026-11-12 | Khung Android đầu tiên, in 58/80mm, 6 đường kết nối máy in |
+| `mobile-v0.3.28` | 2026-11-17 | Cùng 5 thay đổi với desktop 1.1.30 |
+| `mobile-v0.3.27` | 2026-11-16 | POS mobile: 2 pane Sản phẩm / Giỏ hàng, chip không cắt, thanh thanh toán dính đáy |
+| `mobile-v0.3.26` | 2026-11-16 | Sổ công nợ viết lại gọn, tự động |
+| `mobile-v0.3.25` | 2026-11-16 | Sổ công nợ: sửa lỗi KPI/két/tổng, bỏ tab trùng |
+| `mobile-v0.3.24` | 2026-11-16 | Sổ cái dạng tab, chọn nhiều dòng |
+| `mobile-v0.3.23` | 2026-11-16 | Đồng bộ hai chiều, huỷ phiếu thu, tự động đồng bộ |
+| `mobile-v0.3.22` | 2026-11-16 | Nhập nợ cũ, điều chỉnh, sửa/xoá bút toán tay |
+| `mobile-v0.3.21` | 2026-11-16 | Sửa logic xoá, bảng hết cuộn ngang, bill gọn |
+| `mobile-v0.3.20` | 2026-11-16 | Sửa nút xoá (hộp thoại trong app) |
 
 ## 4. Quy tắc của kho này
 
